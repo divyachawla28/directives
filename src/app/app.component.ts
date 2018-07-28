@@ -9,7 +9,7 @@ export class AppComponent implements OnInit {
   numbers = [1,2,3,4,5,6];
   evenNumbers = [];
   oddNumbers = []; 
-
+  updated:boolean = false;
   ngOnInit() {
   	for(let i = 0;i<this.numbers.length;i++) {
   		if(this.numbers[i]%2==0) {
@@ -19,5 +19,8 @@ export class AppComponent implements OnInit {
   			this.oddNumbers.push(this.numbers[i]);
   		}
   	}
+  }
+  getStatus(status:boolean) {
+  	this.updated = status;
   }
 }

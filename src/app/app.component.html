@@ -1,7 +1,12 @@
 <div class="container">
   <div class="row">
-    <app-component1>
-      <div class="holder" (status)="getStatus($event)"></div>
+    <app-component1 (status)="getStatus($event)">
+      <div class="holder" *ngIf="updated else holder1">
+        <li *ngFor="let odds of oddNumbers">{{odds}}</li>
+      </div>
+      <ng-template #holder1>
+        <li *ngFor="let evens of evenNumbers">{{evens}}</li>
+      </ng-template>
     </app-component1>
   </div>
 </div>

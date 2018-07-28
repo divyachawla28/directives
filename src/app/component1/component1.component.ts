@@ -8,7 +8,8 @@ import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 export class Component1Component implements OnInit {
 
 	onlyOdds:boolean = false;
-	@Output() status = new EventEmitter<boolean>();
+	@Output() status = new EventEmitter<boolean>()
+
 
   constructor() { }
 
@@ -16,7 +17,8 @@ export class Component1Component implements OnInit {
   }
 
   buttonClick() {
-  	this.status.emit(!this.onlyOdds);
+  	this.onlyOdds = !this.onlyOdds;
+  	this.status.emit(this.onlyOdds);
   }
 
 }
