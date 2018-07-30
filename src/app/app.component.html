@@ -5,8 +5,10 @@
         <li *ngFor="let odds of oddNumbers" [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'red' : 'transparent'}" [ngClass]="{odd: odd % 2 !== 0 }">{{odds}}</li>
       </div>
       <ng-template #holder1>
-        <li *ngFor="let evens of evenNumbers">{{evens}}</li>
+        <li *ngFor="let evens of evenNumbers" >{{evens}}</li>
       </ng-template>
     </app-component1>
   </div>
+  <p appBasicHighlight>Hello World!</p>
+  <p appBetterHighlight [defaultColor]="'purple'" [highlightColor]="'orange'">Hey you! Hello </p>
 </div>

@@ -5,3 +5,11 @@
 .odd {
 	color: #fff;
 }
+#demo {
+	background-color: purple;
+	color: white;
+}
+.selected {
+	color: white;
+	background-color: orange;
+}
