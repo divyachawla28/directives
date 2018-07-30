@@ -1,14 +1,17 @@
 <div class="container">
   <div class="row">
     <app-component1 (status)="getStatus($event)">
-      <div class="holder" *ngIf="updated else holder1">
+      <!-- <div class="holder" *ngIf="updated else holder1">
         <li *ngFor="let odds of oddNumbers" [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'red' : 'transparent'}" [ngClass]="{odd: odd % 2 !== 0 }">{{odds}}</li>
       </div>
-      <ng-template #holder1>
+ --><div class="holder" *appUnless="!updated">
+        <li class="list-group-item" [ngClass]="{odd: odd % 2 !== 0 }" [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'red' : 'transparent'}" *ngFor="let odds of oddNumbers">{{odds}}</li>
+      </div>      
+      <!-- <ng-template #holder1>
         <li *ngFor="let evens of evenNumbers" >{{evens}}</li>
-      </ng-template>
+      </ng-template> -->
     </app-component1>
   </div>
   <p appBasicHighlight>Hello World!</p>
-  <p appBetterHighlight [defaultColor]="'purple'" [highlightColor]="'orange'">Hey you! Hello </p>
+  <p appBetterHighlight defaultColor="purple" highlightColor="orange">Hey you! Hello </p>
 </div>
